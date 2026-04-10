@@ -3,7 +3,7 @@ ultralytics
 torch
 torchvision
 
-opencv-python
+
 
 huggingface-hub
 
