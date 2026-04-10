@@ -2,12 +2,11 @@ import streamlit as st
 from ultralytics import YOLO
 import numpy as np
 from PIL import Image, ImageDraw
-import sys
+import os
 import importlib.util
 import builtins
-import os
 
-# 注册自定义模块（如果有）
+# ========== 注册自定义模块（如果模型包含 MSCAM、SimAM 等） ==========
 def register_custom_modules():
     module_files = {
         'MSCAM': 'MSCAM.py',
@@ -28,12 +27,11 @@ def load_model():
 
 model = load_model()
 
-st.set_page_config(page_title="YOLO 网页检测", page_icon="🔍")
-st.title("🔍 YOLO 目标检测网页系统")
-st.write("上传图像，一键检测！")
+st.set_page_config(page_title="太阳能电池板遮挡物检测", page_icon="🔍")
+st.title("🔍 太阳能电池板遮挡物检测系统")
+st.write("上传图像，一键检测鸟粪、灰尘、落叶、电气损伤、物理损伤、积雪等遮挡物")
 
 def draw_boxes_pil(image_array, results):
-    """使用 PIL 绘制检测框"""
     img = Image.fromarray(image_array).convert('RGB')
     draw = ImageDraw.Draw(img)
     for box in results[0].boxes:
@@ -50,12 +48,10 @@ uploaded_file = st.file_uploader("选择一张图像", type=["jpg", "jpeg", "png
 if uploaded_file is not None:
     image = Image.open(uploaded_file)
     img_array = np.array(image)
-    
     col1, col2 = st.columns(2)
     with col1:
         st.subheader("原图")
         st.image(image, use_container_width=True)
-    
     if st.button("开始检测"):
         with st.spinner("正在检测..."):
             results = model(img_array, conf=0.25)
@@ -63,4 +59,4 @@ if uploaded_file is not None:
             with col2:
                 st.subheader("检测结果")
                 st.image(result_img, use_container_width=True)
-            st.success(f"检测完成！共发现 {len(results[0].boxes)} 个目标")
+            st.success(f"检测完成！共发现 {len(results[0].boxes)} 个遮挡物")
