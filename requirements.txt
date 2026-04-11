@@ -1,6 +1,6 @@
 
 streamlit>=1.40.0
-ultralytics>=8.3.63  # 必须>=8.3.0才能支持YOLOv12
+
 
 a2a-sdk==0.3.25
 absl-py==1.4.0
