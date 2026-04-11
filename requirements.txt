@@ -1,6 +1,6 @@
 # 精准匹配YOLOv12+Python3.14+Streamlit Cloud的版本
 streamlit>=1.40.0
-ultralytics>=8.3.0  # YOLOv12的最低要求版本，和你训练版本完全对齐
+ultralytics==8.3.63  # YOLOv12的最低要求版本，和你训练版本完全对齐
 opencv-python-headless>=4.10.0.84  # 唯一支持Python3.14的无界面opencv
 pillow>=10.4.0
 numpy>=1.26.4
