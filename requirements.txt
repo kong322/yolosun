@@ -1,8 +1,10 @@
-
 streamlit>=1.38.0
-ultralytics==8.3.63  
-opencv-python-headless==4.13.0.92 
+ultralytics==8.3.63
+opencv-python-headless==4.13.0.92  # 【唯一】opencv，删掉普通版
 pillow==11.3.0
 numpy==2.0.2
 torch==2.10.0
 torchvision==0.25.0
+psutil==5.9.8
+py-cpuinfo==9.0.0
+huggingface-hub==0.23.2
