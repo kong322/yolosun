@@ -1,6 +1,8 @@
 streamlit>=1.38.0
-ultralytics==8.3.63
-opencv-python-headless==4.13.0.92  # 【唯一】opencv，删掉普通版
+# 【关键】强制不让ultralytics自动装普通版opencv
+ultralytics==8.3.63 --exclude opencv-python
+# 只装我们需要的无界面版opencv
+opencv-python-headless==4.13.0.92
 pillow==11.3.0
 numpy==2.0.2
 torch==2.10.0
