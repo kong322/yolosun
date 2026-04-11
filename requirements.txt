@@ -1,6 +1,6 @@
 
 streamlit>=1.38.0
-opencv-python==4.9.0.80
+opencv-contrib-python==4.9.0.80
 psutil==5.9.8
 py-cpuinfo==9.0.0
 huggingface-hub==0.23.2
