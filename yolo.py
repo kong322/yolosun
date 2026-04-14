@@ -81,7 +81,7 @@ if uploaded_file is not None:
         st.image(image, use_container_width=True)
     if st.button("开始检测"):
         with st.spinner("正在检测..."):
-            results = model(img_array, conf=0.25)
+            results = model(img_array, conf=0.5)
             result_img = draw_boxes_pil(img_array, results)
             with col2:
                 st.subheader("检测结果")
