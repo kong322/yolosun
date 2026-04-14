@@ -58,7 +58,7 @@ if uploaded_file is not None:
     if st.button("开始检测"):
         with st.spinner("检测中..."):
             # 关键修复：直接传 PIL 图像，不转 array，避免维度报错
-            results = model(image, conf=0.25)
+            results = model(image, conf=0.1)
             res_img = draw_boxes(image.copy(), results)
 
             with col2:
