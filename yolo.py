@@ -12,7 +12,7 @@ CLASS_NAMES = ['Bird', 'Clean', 'Dust', 'Electrical', 'Physical', 'Snow']
 
 @st.cache_resource
 def load_model():
-    return YOLO("best_pure.pt")   # 替换为你的纯 m 版权重文件名
+    return YOLO("best.pt")   # 替换为你的纯 m 版权重文件名
 
 model = load_model()
 
