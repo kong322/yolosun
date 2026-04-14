@@ -45,4 +45,4 @@ if uploaded_file is not None:
                 st.image(res_img, use_container_width=True)
             
             # 显示检测数量
-            st.success(f"检测完成！共发现 {len(results[0].boxes)} 个目标")，
+            st.success(f"检测完成！共发现 {len(results[0].boxes)} 个目标"),
